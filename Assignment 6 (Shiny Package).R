@@ -3,7 +3,7 @@
 # Created by Mohammad Aviandito & Calvin Sibarani
 # Last updated: April 2021
 
-#Assignment Day 13 by Muh. Hasrun Fitriady
+#Assignment 6 by Muh. Hasrun Fitriady
 
 setwd("D:/Dibimbing/Day 13/Code")
 
