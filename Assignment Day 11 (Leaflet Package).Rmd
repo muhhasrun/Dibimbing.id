@@ -1,0 +1,35 @@
+---
+title: "Assignment Day 11 by Muh. Hasrun"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Create Visualization from Wealthy Zips
+
+- Add Polygon
+- Add Label by the Mean of Income
+
+```{r}
+library(leaflet)
+
+```
+
+```{r}
+wealthy_zips %>%
+  leaflet() %>%
+  addProviderTiles('CartoDB') %>%
+  addPolygons(data = wealthy_zips, weight = 1, fillOpacity = .5, color = 'Grey',
+              group = 'Wealthy Zip Code', label = ~paste0('Mean Income: ',
+                                                          mean_income),
+              highlightOptions = highlightOptions(weight = 5, color = 'white',
+                                                  bringToFront = T)) %>%
+  addLayersControl(baseGroups = c('OSM', 'Carto', 'Esri'),
+                   overlayGroups = c('Public', 'Private', 'For-Profit',
+                                     'Wealthy Zip Codes'))
+
+```
+
+
