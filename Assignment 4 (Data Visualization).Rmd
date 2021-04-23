@@ -1,0 +1,59 @@
+---
+title: "Assignment 4"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Call Package
+```{r}
+library(tidyverse)
+
+```
+
+## Import Data
+
+```{r}
+insurance_loss <- read.csv("D:/Dibimbing/Resources/Insurance_Loss.csv")
+glimpse(insurance_loss)
+
+```
+
+## Which gender creates more total loss?
+
+```{r}
+ggplot(insurance_loss,aes(x=insurance_loss$Gender,y=insurance_loss$Losses)) + geom_point()
+
+```
+Although there are more females than males, but the amount of losses caused by males is more than females.
+
+## Which status creates more total loss?
+
+```{r}
+ggplot(insurance_loss,aes(x=insurance_loss$Married,y=insurance_loss$Losses)) + geom_point()
+
+```
+Single have higher total losses than married. Most of those who are married are more mature and cautious in driving. 
+
+## Which type of fuel creates more total loss?
+
+```{r}
+ggplot(insurance_loss,aes(x=insurance_loss$Fuel.Type,y=insurance_loss$Losses)) + geom_point()
+
+```
+In terms of strength, diesel engine performance is superior to petroleum engines. Also, the potential for petroleum engine to burn is greater than diesel engine.
+
+## Graph Boxplot
+
+```{r}
+ggplot(insurance_loss,aes(x=insurance_loss$Gender,y=insurance_loss$Age)) + geom_boxplot(aes(color = insurance_loss$Gender))
+
+```
+
+```{r}
+ggplot(data=mpg,aes(x=displ,y=hwy,color="blue")) + geom_point()
+
+```
+the point not turns to blue because the word color must inside geom_point()
